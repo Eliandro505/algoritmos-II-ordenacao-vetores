@@ -1,15 +1,9 @@
 package br.com.gomes.service.strategies;
 
-import br.com.gomes.util.ImpressaoVetor;
+import br.com.gomes.interfaces.OrdenacaoStrategy;
 
-public class InsertionSort {
-    public static void main(String[] args) {
-        int[] numeros = {5, 1, 9, 4};
-        ordernar(numeros);
-        ImpressaoVetor.imprimir(numeros);
-    }
-
-    public static void ordernar(int[] vetor) {
+public class InsertionSort implements OrdenacaoStrategy {
+    public void ordenar(int[] vetor) {
         for (int x = 1; x < vetor.length; x++) {
             int chave = vetor[x];
             int y = x - 1;
@@ -20,5 +14,6 @@ public class InsertionSort {
             }
             vetor[y+1] = chave;
         }
+        System.out.println("InsertionSort Usado");
     }
 }

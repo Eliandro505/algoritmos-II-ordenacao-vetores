@@ -1,15 +1,9 @@
 package br.com.gomes.service.strategies;
 
-import br.com.gomes.util.ImpressaoVetor;
+import br.com.gomes.interfaces.OrdenacaoStrategy;
 
-public class BubbleSort {
-    public static void main(String[] args) {
-        int[] array = {3, 2, 5, 1};
-        ordenar(array);
-        ImpressaoVetor.imprimir(array);
-    }
-
-    public static void ordenar(int[] arrayNum) {
+public class BubbleSort implements OrdenacaoStrategy {
+    public void ordenar(int[] arrayNum) {
         int size = arrayNum.length;
         int contador = 0;
         for (int x = 0; x < size - 1; x++) {
@@ -25,6 +19,6 @@ public class BubbleSort {
             }
             if(!trocou) break;
         }
-        System.out.println(contador);
+        System.out.println("BubbleSort usado: " + contador);
     }
 }
