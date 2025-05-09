@@ -10,6 +10,7 @@ public class Main {
         int[] arrayNum = {5, 3, 8, 1, 2};
 
         System.out.printf("[insertionsort] ou [insertion] - Insertion\n" +
+                "[selectionsort] ou [selection] - Insertion\n" +
                 "[qualquer outra entrada] - BubbleSort\n" +
                 "---[");
 

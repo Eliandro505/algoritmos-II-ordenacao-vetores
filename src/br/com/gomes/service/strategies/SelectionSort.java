@@ -1,31 +1,10 @@
 package br.com.gomes.service.strategies;
 
-import java.util.Scanner;
-import br.com.gomes.util.ImpressaoVetor;
+import br.com.gomes.interfaces.OrdenacaoStrategy;
 
-public class SelectionSort {
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
 
-        System.out.println("Qnts nomes? ");
-        int qntNomes = scan.nextInt();
-        scan.nextLine();
-
-        String[] nomes = new String[qntNomes];
-        for (int i = 0; i < qntNomes; i++) {
-            System.out.println(i+1+"° Nome: ");
-            nomes[i] = scan.nextLine();
-        }
-
-        ordenarNomes(nomes);
-        ImpressaoVetor.imprimirString(nomes);
-
-//        int[] vetor = {10, 1, 2, 3, 4};
-//        ordenar(vetor);
-//        ImpressaoVetor.imprimir(vetor);
-    }
-
-    private static void ordenar(int[] vetor) {
+public class SelectionSort implements OrdenacaoStrategy {
+    public void ordenar(int[] vetor) {
         for (int i = 0; i < vetor.length-1; i++) {
             int menor = i;
             for (int x =  i + 1; x < vetor.length; x++) {
@@ -37,6 +16,7 @@ public class SelectionSort {
                 vetor[menor] = temp;
             }
         }
+        System.out.println("SelectionSort usado: ");
     }
 
     private static void ordenarNomes(String[] nomes) {
